@@ -1,6 +1,6 @@
 package com.example.appnews.api
 
-import PreferenceModule
+import com.example.appnews.commons.preference.PreferenceModule
 import com.example.appnews.utils.ConstansKotlin.Companion.ENVIRONMENT
 import dagger.Module
 import dagger.Provides
@@ -26,7 +26,7 @@ object ApiModule {
     @Singleton
     @RetrofitTryDistri
     @Provides
-    fun provideRetrofitTryDistri(preferenceModule: PreferenceModule): Retrofit {
+    fun provideRetrofit(preferenceModule: PreferenceModule): Retrofit {
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor { chain: Interceptor.Chain ->
